@@ -1,0 +1,17 @@
+apiVersion: sso.apps.tanzu.vmware.com/v1alpha1
+kind: ClientRegistration
+metadata:
+  name: server-side-ui-starter-client-registration
+spec:
+  authServerSelector:
+    matchLabels:
+      hi-tap
+  authorizationGrantTypes:
+    - authorization_code
+    - refresh_token
+  clientAuthenticationMethod: basic
+  requireUserConsent: false
+  redirectURIs:
+    - "http://hi-tap.apps.tap.bmath.nyc/login/oauth2/code/server-side-ui-starter"
+  scopes:
+    - name: openid
