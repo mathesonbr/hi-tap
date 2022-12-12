@@ -1,8 +1,8 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: server-side-ui-starter
-  description: Spring Boot application with server side rendered web UI. Application supports single sign-on (SSO) via Spring Security OAuth 2 Client library.
+  name: hi-tap
+  description: Simple spring web app
   tags:
     - java
     - spring
@@ -11,7 +11,7 @@ metadata:
     - appsso
     - oidc
   annotations:
-    "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=server-side-ui-starter"
+    "backstage.io/kubernetes-label-selector": "app.kubernetes.io/part-of=hi-tap"
 spec:
   type: service
   lifecycle: experimental

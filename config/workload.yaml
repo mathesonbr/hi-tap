@@ -1,11 +1,12 @@
 apiVersion: carto.run/v1alpha1
 kind: Workload
 metadata:
-  name: server-side-ui-starter
+  name: hi-tap
+  namespace: dev-tap
   labels:
     apps.tanzu.vmware.com/workload-type: web
-    app.kubernetes.io/part-of: server-side-ui-starter
-    apps.tanzu.vmware.com/has-tests: true
+    app.kubernetes.io/part-of: hi-tap
+    apps.tanzu.vmware.com/has-tests: "true"
 spec:
   build:
     env:
@@ -17,13 +18,11 @@ spec:
         autoscaling.knative.dev/minScale: "1"
   source:
     git:
-      url: https://github.com/vmware-tanzu/application-accelerator-samples.git
-      ref:
-        branch: main
-    subPath: server-side-ui-starter
+      url: "https://gitea.tap.bmath.nyc/bmath.nyc/hi-tap.git"
+    subPath: hi-tap
   serviceClaims:
-    - name: server-side-ui-starter
+    - name: hi-tap
       ref:
         apiVersion: services.apps.tanzu.vmware.com/v1alpha1
         kind: ResourceClaim
-        name: server-side-ui-starter-client-registration-claim
+        name: hi-tap-registration-claim
